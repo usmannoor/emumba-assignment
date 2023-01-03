@@ -1,0 +1,28 @@
+<div class="row d-flex flex-row flex-nowrap overflow-auto mt-3">
+  <div class="card col-md-6 mb-3 me-sm-2" *ngFor="let data of dailyWeather;">
+    <div class="card-body d-flex cursor-pointer" (click)="onCardClick()" title="Click to show Bar Chart">
+      <div class="w-75">
+        <h5>Day/Date: {{ data?.dt | date: 'short' }}</h5>
+        <h5 class="mt-3">Current Temperature: {{ data?.temp?.day }}</h5>
+        <h5 class="mt-3">
+          Weather Condition: {{ data?.weather && data?.weather?.length ? data?.weather[0]?.description : '' }}
+        </h5>
+        <h5 class="mt-3">High / Low Temperature:
+          {{ data && data?.temp ? data?.temp?.max + '/' +  data?.temp?.min : ''}}
+        </h5>
+        <h5 class="mt-3">Wind Speed: {{ data?.wind_speed }}</h5>
+        <h5 class="mt-3">Humidity: {{ data?.humidity }}</h5>
+        <h5 class="mt-3">Pressure: {{ data?.pressure }}</h5>
+        <h5 class="mt-3">
+          Sunrise/Sunset Time:
+          {{ data?.sunrise ? (data?.sunrise * 1000 | date: 'mediumTime') + ' /' : '' }}
+          {{ data?.sunset ? (data?.sunset * 1000 | date: 'mediumTime') : '' }}
+        </h5>
+
+      </div>
+      <div class="w-25 text-right" *ngIf="data?.weather">
+        <img class="" [src]="'https://openweathermap.org/img/wn/' + data?.weather[0]?.icon + '@2x.png'" alt="sans" width="125px">
+      </div>
+    </div>
+  </div>
+</div>

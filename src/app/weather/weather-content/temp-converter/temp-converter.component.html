@@ -1,0 +1,20 @@
+<h3 class="card-title">Temperature Converter</h3>
+
+<div class="d-flex row align-items-center mt-4 mb-4 justify-content-center">
+  <div class="col-sm-4 form-floating">
+    <input type="number" class="form-control" id="fahrenheit" placeholder="Fahrenheit"
+       (keyup)="calculateTemperature($event)" value="{{ fahrenheitValue }}">
+    <label for="fahrenheit">Degrees Fahrenheit</label>
+
+  </div>
+
+  <div class="col-sm-2 text-center fa-2x">
+    <i class="fa fa-exchange-alt" aria-hidden="true"></i>
+  </div>
+
+  <div class="col-sm-4 form-floating">
+    <input type="number" class="form-control" id="celsius" placeholder="Celsius"
+       (keyup)="calculateTemperature($event, false)" value="{{celsiusValue}}">
+    <label for="celsius">Degrees Celsius</label>
+  </div>
+</div>

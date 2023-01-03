@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "http://api.openweathermap.org/geo/1.0/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

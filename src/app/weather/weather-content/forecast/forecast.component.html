@@ -1,0 +1,11 @@
+<div *ngIf="type === GridObjectType.forecast; else weeklyForecast">
+  <h3 class="card-title">Today's Forecast for {{ searchResult?.name }}</h3>
+  <app-current-forecast [currentWeather]="searchResult?.current"></app-current-forecast>
+</div>
+
+<ng-template #weeklyForecast>
+  <h3 class="card-title">Weekly Forecast for {{ searchResult?.name }}</h3>
+  <app-daily-forecast [dailyWeather]="searchResult?.daily"></app-daily-forecast>
+
+</ng-template>
+

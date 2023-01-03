@@ -1,0 +1,13 @@
+<div class="card m-5">
+  <app-header></app-header>
+
+  <div class="card-body">
+    <app-weather-search (weatherSelect)="onWeatherSelected($event)"></app-weather-search>
+    <app-weather-content [searchResult]="searchResult"></app-weather-content>
+    <app-weather-map></app-weather-map>
+  </div>
+
+</div>
+
+<app-loader *ngIf="isLoading">{{ isLoading }}</app-loader>
+
